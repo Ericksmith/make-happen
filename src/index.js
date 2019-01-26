@@ -8,17 +8,15 @@ import Routes from "./Routes";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 
 const theme = createMuiTheme({
-  // palette: {
-  //   primary: { main: "#448abd", contrastText: "#FFF" },
-  //   secondary: {
-  //     main: "#e53935"
-  //   }
-  // },
+  palette: {
+    primary: { main: "#006bb7", contrastText: "#4c4c4c" },
+    secondary: {
+      main: "#FF8F3E"
+    }
+  },
   typography: {
     useNextVariants: true,
-    fontFamily:
-      "montserrat,-apple-system,system-ui,BlinkMacSystemFont," +
-      '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
+    fontFamily: "Roboto, Arial, sans-serif"
   }
 });
 
