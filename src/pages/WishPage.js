@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Home extends Component {
+class WishPage extends Component {
   constructor(props) {
     super(props);
 
@@ -8,8 +8,8 @@ class Home extends Component {
   }
 
   render() {
-    return <div>Home page</div>;
+    return <div>WishPage page</div>;
   }
 }
 
-export default Home;
+export default WishPage;
