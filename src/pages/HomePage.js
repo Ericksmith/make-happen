@@ -34,7 +34,7 @@ const matStyles = theme => ({
 const wishes = [
   {
     image: "/images/wishes/disney.jpg",
-    title: "Disney Land Trip",
+    title: "Disney World Trip",
     description: "I wish to go to Walt Disney Land",
     key: uuid(),
     route: routes.DISNEY
@@ -68,10 +68,9 @@ class HomePage extends Component {
         </div>
         <Paper className={classes.root}>
           <Typography variant="body1">
-            Desicription of donation program --- Ugit lam autes sit et doluptium
-            es et et et voluptatur? Ecum doloriatur, sitatur adit aut omnis ad
-            que quam, quatus, nis dolum inctinc tatiis alique nos pa nullesto
-            vendit plianda ectatur?
+            Each wish is a story woven with many parts. Here on Make-A-Wish
+            Happen, you can see where your donations are going and how each item
+            makes a positive impact.
           </Typography>
         </Paper>
         <br />
