@@ -22,6 +22,10 @@ const matStyles = theme => ({
   },
   media: {
     height: 140
+  },
+  mediaFunded: {
+    height: 140,
+    opacity: "0.6"
   }
 });
 
@@ -48,7 +52,7 @@ class HomePage extends Component {
         </Paper>
         <br />
         <Typography variant="title" gutterBottom>
-          Wishes That Need Funded
+          Wishes That Need Funding
         </Typography>
         <Grid container spacing={16}>
           <Grid item xs={12} md={4}>
@@ -163,7 +167,7 @@ class HomePage extends Component {
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
-                  className={classes.media}
+                  className={classes.mediaFunded}
                   image={flight}
                   title="Disney Land Trip"
                 />
@@ -188,7 +192,7 @@ class HomePage extends Component {
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
-                  className={classes.media}
+                  className={classes.mediaFunded}
                   image={flight}
                   title="Disney Land Trip"
                 />
@@ -213,7 +217,7 @@ class HomePage extends Component {
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
-                  className={classes.media}
+                  className={classes.mediaFunded}
                   image={flight}
                   title="Disney Land Trip"
                 />
@@ -238,7 +242,7 @@ class HomePage extends Component {
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
-                  className={classes.media}
+                  className={classes.mediaFunded}
                   image={flight}
                   title="Disney Land Trip"
                 />
