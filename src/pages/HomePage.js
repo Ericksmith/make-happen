@@ -35,14 +35,14 @@ const matStyles = theme => ({
 
 const wishes = [
   {
-    image: disney,
+    image: "/images/wishes/disney.jpg",
     title: "Disney Land Trip",
     description: "I wish to go to Walt Disney Land",
     key: uuid(),
     route: routes.DISNEY
   },
   {
-    image: party,
+    image: "/images/wishes/quinceanera.jpg",
     title: "Quinceanera",
     description: "I want to have a quinceanera",
     key: uuid(),
@@ -62,6 +62,7 @@ class HomePage extends Component {
 
   render() {
     const { classes } = this.props;
+
     return (
       <div className={styles.container}>
         <div className={styles.header}>

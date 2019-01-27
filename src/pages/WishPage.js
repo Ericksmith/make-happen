@@ -10,10 +10,14 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import { Link } from "react-router-dom";
 import routes from "../constants/routes";
 import logo from "../static/wishHappensLogo.png";
-import flight from "../static/flight.jpg";
 import styles from "./WishPage.module.scss";
 
 const matStyles = theme => ({
@@ -42,60 +46,11 @@ const matStyles = theme => ({
   }
 });
 
-const tileData = [
-  {
-    key: "disneyCamera",
-    title: "Camera",
-    description: "A camera to remember the trip with",
-    img: "/images/disney/camera.jpg",
-    cost: "$85"
-  },
-  {
-    key: "disneyMeals",
-    title: "Meals",
-    description: "Meals provided to the family during the trip",
-    img: "/images/disney/meals.jpg",
-    cost: "200"
-  },
-  {
-    key: "disneyLuggage",
-    title: "Luggage",
-    description: "Provide luggage to make the trip possible",
-    img: "/images/disney/luggage.jpg",
-    cost: "400"
-  },
-
-  {
-    key: "disneyHotel",
-    title: "Hotel",
-    description: "A hotel room for the family",
-    img: "/images/disney/hotel.jpg",
-    cost: "2000"
-  }
-];
-
-const titleDataFuneded = [
-  {
-    key: "disneyFlight",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
-    cost: "1500"
-  },
-  {
-    key: "disneySouvenirs",
-    title: "Souvenirs",
-    description: "Provide souvenirs during the trip to make it unforgateable!",
-    img: "/images/disney/souvenir.jpg",
-    cost: "2000"
-  }
-];
-
 class WishPage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { open: false, modalTitle: "" };
   }
 
   componentDidMount() {
@@ -104,8 +59,25 @@ class WishPage extends Component {
 
   handleDonate = () => {};
 
+  handleClickOpen = (modalTitle) => {
+    this.setState({ open: true, modalTitle });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   render() {
-    const { classes } = this.props;
+    const { classes, content } = this.props;
+    const { open, modalTitle } = this.state;
+    let tileData = [];
+    let titleDataFuneded = [];
+    if (content.tileData) {
+      tileData = content.tileData;
+    }
+    if (content.titleDataFuneded) {
+      titleDataFuneded = content.titleDataFuneded;
+    }
     return (
       <div className={styles.container}>
         <Link to={routes.HOME}>
@@ -115,15 +87,9 @@ class WishPage extends Component {
           <Grid item xs={12} md={9}>
             <Paper className={classes.root}>
               <Typography variant="h6" gutterBottom>
-                Dollar Shave Club Sends a Make-A-Wish Kid to Disney World
+                {content.title}
               </Typography>
-              <Typography variant="body1">
-                This holiday season, the team at Dollar Shave Club wants to send
-                one Make-A-Wish child and their family to Disney World to
-                surround them with fairy tale magic and enchantment. We need
-                your support to help us cover the costs. Click an item below to
-                help us fund a child's dream come true.
-              </Typography>
+              <Typography variant="body1">{content.description}</Typography>
             </Paper>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -165,7 +131,10 @@ class WishPage extends Component {
                 title={tile.title}
                 subtitle={<span>{tile.description}</span>}
                 actionIcon={
-                  <IconButton className={classes.icon}>
+                  <IconButton
+                    className={classes.icon}
+                    onClick={() => this.handleClickOpen(tile.title, tile.cost)}
+                  >
                     <InfoIcon />
                   </IconButton>
                 }
@@ -194,7 +163,10 @@ class WishPage extends Component {
                 title={tile.title}
                 subtitle={<span>{tile.description}</span>}
                 actionIcon={
-                  <IconButton className={classes.icon}>
+                  <IconButton
+                    className={classes.icon}
+                    onClick={() => this.handleClickOpen(tile.title, tile.cost)}
+                  >
                     <InfoIcon />
                   </IconButton>
                 }
@@ -202,6 +174,30 @@ class WishPage extends Component {
             </GridListTile>
           ))}
         </GridList>
+        <Dialog
+          open={open}
+          onClose={this.handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {modalTitle}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Let Google help apps determine location. This means sending
+              anonymous location data to Google, even when no apps are running.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Close
+            </Button>
+            <Button color="secondary" variant="contained" autoFocus>
+              Donate
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   }
