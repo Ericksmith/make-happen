@@ -10,7 +10,9 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
-import uuid from "uuid/v4";
+import { Link } from "react-router-dom";
+import routes from "../constants/routes";
+import logo from "../static/wishHappensLogo.png";
 import flight from "../static/flight.jpg";
 import styles from "./WishPage.module.scss";
 
@@ -42,45 +44,49 @@ const matStyles = theme => ({
 
 const tileData = [
   {
-    key: uuid(),
+    key: "disneyCamera",
     title: "Camera",
     description: "A camera to remember the trip with",
     img: "/images/disney/camera.jpg",
     cost: "$85"
   },
   {
-    key: uuid(),
+    key: "disneyMeals",
     title: "Meals",
     description: "Meals provided to the family during the trip",
     img: "/images/disney/meals.jpg",
     cost: "200"
   },
   {
-    key: uuid(),
+    key: "disneyLuggage",
     title: "Luggage",
     description: "Provide luggage to make the trip possible",
     img: "/images/disney/luggage.jpg",
     cost: "400"
   },
+
   {
-    key: uuid(),
-    title: "Souvenirs",
-    description: "Provide souvenirs during the trip to make it unforgateable!",
-    img: "/images/disney/souvenir.jpg",
+    key: "disneyHotel",
+    title: "Hotel",
+    description: "A hotel room for the family",
+    img: "/images/disney/hotel.jpg",
     cost: "2000"
-  },
+  }
+];
+
+const titleDataFuneded = [
   {
-    key: uuid(),
+    key: "disneyFlight",
     title: "Flight",
     description: "4 round trip tickets",
     img: flight,
     cost: "1500"
   },
   {
-    key: uuid(),
-    title: "Hotel",
-    description: "A hotel room for the family",
-    img: "/images/disney/hotel.jpg",
+    key: "disneySouvenirs",
+    title: "Souvenirs",
+    description: "Provide souvenirs during the trip to make it unforgateable!",
+    img: "/images/disney/souvenir.jpg",
     cost: "2000"
   }
 ];
@@ -102,6 +108,9 @@ class WishPage extends Component {
     const { classes } = this.props;
     return (
       <div className={styles.container}>
+        <Link to={routes.HOME}>
+          <img src={logo} alt="logo" className={styles.logo} />
+        </Link>
         <Grid container spacing={16}>
           <Grid item xs={12} md={9}>
             <Paper className={classes.root}>
@@ -146,7 +155,7 @@ class WishPage extends Component {
               className={classes.subListText}
               component="div"
             >
-              Items that are donated
+              Items needed to make this wish happen
             </ListSubheader>
           </GridListTile>
           {tileData.map(tile => (
@@ -174,7 +183,7 @@ class WishPage extends Component {
               Items that are donated
             </ListSubheader>
           </GridListTile>
-          {tileData.map(tile => (
+          {titleDataFuneded.map(tile => (
             <GridListTile key={tile.key}>
               <img
                 className={styles.tileImgDonated}
