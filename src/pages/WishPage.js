@@ -50,7 +50,7 @@ class WishPage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { open: false, modalTitle: "" };
+    this.state = { open: false, modalTitle: "", text: "", cost: "" };
   }
 
   componentDidMount() {
@@ -59,8 +59,8 @@ class WishPage extends Component {
 
   handleDonate = () => {};
 
-  handleClickOpen = modalTitle => {
-    this.setState({ open: true, modalTitle });
+  handleClickOpen = (modalTitle, text, cost) => {
+    this.setState({ open: true, modalTitle, text, cost });
   };
 
   handleClose = () => {
@@ -69,7 +69,7 @@ class WishPage extends Component {
 
   render() {
     const { classes, content } = this.props;
-    const { open, modalTitle } = this.state;
+    const { open, modalTitle, text, cost } = this.state;
     let tileData = [];
     let titleDataFuneded = [];
     if (content.tileData) {
@@ -114,8 +114,8 @@ class WishPage extends Component {
             </div>
           </Grid>
         </Grid>
-        <GridList cellHeight={250} className={classes.gridList}>
-          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+        <GridList cols={3} className={classes.gridList}>
+          <GridListTile key="Subheader" cols={3} style={{ height: "auto" }}>
             <ListSubheader
               color="primary"
               className={classes.subListText}
@@ -125,7 +125,7 @@ class WishPage extends Component {
             </ListSubheader>
           </GridListTile>
           {tileData.map(tile => (
-            <GridListTile key={tile.key}>
+            <GridListTile cols={1} key={tile.key}>
               <img className={styles.tileImg} src={tile.img} alt={tile.title} />
               <GridListTileBar
                 title={tile.title}
@@ -133,7 +133,9 @@ class WishPage extends Component {
                 actionIcon={
                   <IconButton
                     className={classes.icon}
-                    onClick={() => this.handleClickOpen(tile.title, tile.cost)}
+                    onClick={() =>
+                      this.handleClickOpen(tile.title, tile.text, tile.cost)
+                    }
                   >
                     <InfoIcon />
                   </IconButton>
@@ -142,8 +144,8 @@ class WishPage extends Component {
             </GridListTile>
           ))}
         </GridList>
-        <GridList cellHeight={250} className={classes.gridList}>
-          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+        <GridList cellHeight={250} cols={3} className={classes.gridList}>
+          <GridListTile key="Subheader" cols={3} style={{ height: "auto" }}>
             <ListSubheader
               color="primary"
               className={classes.subListText}
@@ -153,7 +155,7 @@ class WishPage extends Component {
             </ListSubheader>
           </GridListTile>
           {titleDataFuneded.map(tile => (
-            <GridListTile key={tile.key}>
+            <GridListTile cols={1} key={tile.key}>
               <img
                 className={styles.tileImgDonated}
                 src={tile.img}
@@ -165,7 +167,9 @@ class WishPage extends Component {
                 actionIcon={
                   <IconButton
                     className={classes.icon}
-                    onClick={() => this.handleClickOpen(tile.title, tile.cost)}
+                    onClick={() =>
+                      this.handleClickOpen(tile.title, tile.text, tile.cost)
+                    }
                   >
                     <InfoIcon />
                   </IconButton>
@@ -180,19 +184,15 @@ class WishPage extends Component {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">{modalTitle}</DialogTitle>
+          <DialogTitle id="alert-dialog-title">
+            {modalTitle}
+            <DialogContentText id="alert-dialog-description">
+              {cost}
+            </DialogContentText>
+          </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              {text}
             </DialogContentText>
           </DialogContent>
           <DialogActions>
