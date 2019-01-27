@@ -138,10 +138,44 @@ class WishPage extends Component {
             </Button>
             <br />
             <br />
-            <br />
-            <div>List of Donors</div>
+            <div>
+              <Typography variant="subheading">
+                Current donations:
+              </Typography>
+              <Typography variant="caption">
+                John Doe Donated Luggage!
+              </Typography>
+              <Typography variant="caption">
+                Jane Doe Donated A Flight!
+              </Typography>
+            </div>
           </Grid>
         </Grid>
+        <GridList cellHeight={250} className={classes.gridList}>
+          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
+            <ListSubheader
+              color="primary"
+              className={classes.subListText}
+              component="div"
+            >
+              Items that are donated
+            </ListSubheader>
+          </GridListTile>
+          {tileData.map(tile => (
+            <GridListTile key={tile.img}>
+              <img className={styles.tileImg} src={tile.img} alt={tile.title} />
+              <GridListTileBar
+                title={tile.title}
+                subtitle={<span>{tile.description}</span>}
+                actionIcon={
+                  <IconButton className={classes.icon}>
+                    <InfoIcon />
+                  </IconButton>
+                }
+              />
+            </GridListTile>
+          ))}
+        </GridList>
         <GridList cellHeight={250} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
             <ListSubheader
