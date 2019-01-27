@@ -59,7 +59,7 @@ class WishPage extends Component {
 
   handleDonate = () => {};
 
-  handleClickOpen = (modalTitle) => {
+  handleClickOpen = modalTitle => {
     this.setState({ open: true, modalTitle });
   };
 
@@ -180,13 +180,19 @@ class WishPage extends Component {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">
-            {modalTitle}
-          </DialogTitle>
+          <DialogTitle id="alert-dialog-title">{modalTitle}</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              Let Google help apps determine location. This means sending
-              anonymous location data to Google, even when no apps are running.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
