@@ -35,14 +35,14 @@ const wishes = [
   {
     image: "/images/wishes/disney.jpg",
     title: "Disney World Trip",
-    description: "I wish to go to Walt Disney Land",
+    description: "I wish to go to Walt Disney World",
     key: uuid(),
     route: routes.DISNEY
   },
   {
     image: "/images/wishes/quinceanera.jpg",
-    title: "Quinceanera",
-    description: "I want to have a quinceanera",
+    title: "Quinceañera",
+    description: "I want to have a quinceañera",
     key: uuid(),
     route: routes.QUINCEANERA
   }

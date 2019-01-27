@@ -89,7 +89,7 @@ const data = {
         title: "Party DJ",
         description: "A professional DJ to start the party right",
         text:
-          "A quinceanera traditionally features multiple waltzes. We want the best talent to help her and her guests dance the night away to the music of their choice. ",
+          "A quinceañera traditionally features multiple waltzes. We want the best talent to help her and her guests dance the night away to the music of their choice. ",
         img: "/images/quinceanera/dj.jpg",
         cost: "$200"
       },
@@ -98,7 +98,7 @@ const data = {
         title: "Catering",
         description: "Provide cating for the party",
         text:
-          "Tamales, enchiladas, tacos, and barbacoa are part of the dishes traditionally featured at a quinceanera. Your donation helps us feature as many of these as possible for an amazingly delicious dinner.",
+          "Tamales, enchiladas, tacos, and barbacoa are part of the dishes traditionally featured at a quinceañera. Your donation helps us feature as many of these as possible for an amazingly delicious dinner.",
         img: "/images/quinceanera/food.jpg",
         cost: "$2000"
       }
@@ -132,9 +132,9 @@ const data = {
         cost: "$100"
       }
     ],
-    title: "ScaleLA throws an amazing quinceanera",
+    title: "ScaleLA throws an amazing quinceañera",
     description:
-      "In Latin American cultures, a quinceanera is the exciting celebration of a girl's 15th birthday. The coming-of-age ceremony marks the transition between childhood and womanhood. It's an elaborate event planned months in advance, and we need your help to cover the costs of the girl's special day.",
+      "In Latin American cultures, a quinceañera is the exciting celebration of a girl's 15th birthday. The coming-of-age ceremony marks the transition between childhood and womanhood. It's an elaborate event planned months in advance, and we need your help to cover the costs of the girl's special day.",
     donors: [
       "John Doe donated to a Professional Photographer!",
       "Jim Doe donated to a party setup!",

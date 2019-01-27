@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: "Roboto, Arial, sans-serif"
+    fontFamily: "droid-serif, georgia, serif"
   }
 });
 
