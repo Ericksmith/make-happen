@@ -1,4 +1,6 @@
 {
   "HOME": "/",
-  "WISH": "/:id"
+  "WISH": "/:id",
+  "QUINCEANERA": "/Quinceanera",
+  "DISNEY": "/disney"
 }

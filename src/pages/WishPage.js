@@ -10,6 +10,7 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
+import uuid from "uuid/v4";
 import flight from "../static/flight.jpg";
 import styles from "./WishPage.module.scss";
 
@@ -32,7 +33,7 @@ const matStyles = theme => ({
     height: "auto"
   },
   icon: {
-    color: theme.palette.primary.main
+    color: theme.palette.secondary.main
   },
   subListText: {
     fontSize: 20
@@ -41,59 +42,45 @@ const matStyles = theme => ({
 
 const tileData = [
   {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
+    key: uuid(),
+    title: "Camera",
+    description: "A camera to remember the trip with",
+    img: "/images/disney/camera.jpg",
+    cost: "$85"
+  },
+  {
+    key: uuid(),
+    title: "Meals",
+    description: "Meals provided to the family during the trip",
+    img: "/images/disney/meals.jpg",
+    cost: "200"
+  },
+  {
+    key: uuid(),
+    title: "Luggage",
+    description: "Provide luggage to make the trip possible",
+    img: "/images/disney/luggage.jpg",
+    cost: "400"
+  },
+  {
+    key: uuid(),
+    title: "Souvenirs",
+    description: "Provide souvenirs during the trip to make it unforgateable!",
+    img: "/images/disney/souvenir.jpg",
     cost: "2000"
   },
   {
-    key: "sdflkewf",
+    key: uuid(),
     title: "Flight",
     description: "4 round trip tickets",
     img: flight,
-    cost: "2000"
+    cost: "1500"
   },
   {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
-    cost: "2000"
-  },
-  {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
-    cost: "2000"
-  },
-  {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
-    cost: "2000"
-  },
-  {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
-    cost: "2000"
-  },
-  {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
-    cost: "2000"
-  },
-  {
-    key: "sdflkewf",
-    title: "Flight",
-    description: "4 round trip tickets",
-    img: flight,
+    key: uuid(),
+    title: "Hotel",
+    description: "A hotel room for the family",
+    img: "/images/disney/hotel.jpg",
     cost: "2000"
   }
 ];
@@ -103,6 +90,10 @@ class WishPage extends Component {
     super(props);
 
     this.state = {};
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   handleDonate = () => {};
@@ -119,11 +110,10 @@ class WishPage extends Component {
               </Typography>
               <Typography variant="body1">
                 This holiday season, the team at Dollar Shave Club wants to send
-                one Make-A-Wish child and their family to Disney World to give
-                them hope and light during the most difficult time of their
-                lives. We need your support to help us cover the costs.
-                .................. Click an item below to help us fund this
-                trip!
+                one Make-A-Wish child and their family to Disney World to
+                surround them with fairy tale magic and enchantment. We need
+                your support to help us cover the costs. Click an item below to
+                help us fund a child's dream come true.
               </Typography>
             </Paper>
           </Grid>
@@ -139,9 +129,7 @@ class WishPage extends Component {
             <br />
             <br />
             <div>
-              <Typography variant="subheading">
-                Current donations:
-              </Typography>
+              <Typography variant="subtitle1">Current donations:</Typography>
               <Typography variant="caption">
                 John Doe Donated Luggage!
               </Typography>
@@ -162,7 +150,7 @@ class WishPage extends Component {
             </ListSubheader>
           </GridListTile>
           {tileData.map(tile => (
-            <GridListTile key={tile.img}>
+            <GridListTile key={tile.key}>
               <img className={styles.tileImg} src={tile.img} alt={tile.title} />
               <GridListTileBar
                 title={tile.title}
@@ -187,8 +175,12 @@ class WishPage extends Component {
             </ListSubheader>
           </GridListTile>
           {tileData.map(tile => (
-            <GridListTile key={tile.img}>
-              <img className={styles.tileImg} src={tile.img} alt={tile.title} />
+            <GridListTile key={tile.key}>
+              <img
+                className={styles.tileImgDonated}
+                src={tile.img}
+                alt={tile.title}
+              />
               <GridListTileBar
                 title={tile.title}
                 subtitle={<span>{tile.description}</span>}
