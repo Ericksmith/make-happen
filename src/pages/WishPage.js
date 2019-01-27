@@ -105,12 +105,9 @@ class WishPage extends Component {
             <br />
             <div>
               <Typography variant="subtitle1">Current donations:</Typography>
-              <Typography variant="caption">
-                John Doe Donated Luggage!
-              </Typography>
-              <Typography variant="caption">
-                Jane Doe Donated A Flight!
-              </Typography>
+              {content.donors.map(donation => (
+                <Typography variant="caption">{donation}</Typography>
+              ))}
             </div>
           </Grid>
         </Grid>
