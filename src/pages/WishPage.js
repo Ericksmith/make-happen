@@ -129,7 +129,7 @@ class WishPage extends Component {
               <img className={styles.tileImg} src={tile.img} alt={tile.title} />
               <GridListTileBar
                 title={tile.title}
-                subtitle={<span>{tile.description}</span>}
+                // subtitle={<span>{tile.description}</span>}
                 actionIcon={
                   <IconButton
                     className={classes.icon}
@@ -161,7 +161,7 @@ class WishPage extends Component {
               />
               <GridListTileBar
                 title={tile.title}
-                subtitle={<span>{tile.description}</span>}
+                // subtitle={<span>{tile.description}</span>}
                 actionIcon={
                   <IconButton
                     className={classes.icon}

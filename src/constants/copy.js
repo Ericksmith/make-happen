@@ -4,7 +4,7 @@ const data = {
       {
         key: "disneyCamera",
         title: "Camera",
-        description: "A camera to remember the trip with",
+        description: "Capture the most special moments",
         img: "/images/disney/camera.jpg",
         cost: "$85"
       },
@@ -97,7 +97,7 @@ const data = {
         description: "A spa treatment to get ready for the party",
         img: "/images/quinceanera/faceMask.jpg",
         cost: "$100"
-      },
+      }
     ],
     title: "ScaleLA throws an amazing quinceanera",
     description:
