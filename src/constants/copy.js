@@ -124,7 +124,7 @@ const data = {
       },
       {
         key: "facemask",
-        title: "Beauty Spa",
+        title: "Beauty",
         description: "A spa treatment to get ready for the party",
         text:
           "For her special day, a girl will want to look her best. This can take facials, spa days, manicures/pedicures, or a visit to a hair salon for a head-to-toe glow.",
