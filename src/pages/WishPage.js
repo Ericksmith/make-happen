@@ -114,7 +114,7 @@ class WishPage extends Component {
         <Grid container spacing={16}>
           <Grid item xs={12} md={9}>
             <Paper className={classes.root}>
-              <Typography variant="title" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 Dollar Shave Club Sends a Make-A-Wish Kid to Disney World
               </Typography>
               <Typography variant="body1">
