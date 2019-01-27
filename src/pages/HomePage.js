@@ -14,8 +14,6 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import uuid from "uuid/v4";
 import routes from "../constants/routes";
-import party from "../static/wishes/party.jpg";
-import disney from "../static/wishes/disney.jpg";
 
 const matStyles = theme => ({
   root: {
