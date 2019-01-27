@@ -11,7 +11,10 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import uuid from 'uuid/v4';
 import flight from "../static/flight.jpg";
+import party from "../static/wishes/party.jpg";
+import disney from "../static/wishes/disney.jpg";
 
 const matStyles = theme => ({
   root: {
@@ -28,6 +31,21 @@ const matStyles = theme => ({
     opacity: "0.6"
   }
 });
+
+const wishes = [
+  {
+    image: disney,
+    title: "Disney Land Trip",
+    description: "I wish to go to Walt Disney Land",
+    key: uuid()
+  },
+  {
+    image: party,
+    title: "",
+    description: "",
+    key: uuid()
+  }
+]
 
 class HomePage extends Component {
   constructor(props) {
@@ -55,44 +73,47 @@ class HomePage extends Component {
           Wishes That Need Funding
         </Typography>
         <Grid container spacing={16}>
+          {wishes.map(wish => (
+          <Grid item xs={12} md={4}>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardMedia
+                className={classes.media}
+                image={wish.image}
+                title="Disney Land Trip"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2" color="primary">
+                  {wish.title}
+                </Typography>
+                <Typography component="p">{wish.description}</Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="secondary">
+                Learn how to help
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+          ))}
+
           <Grid item xs={12} md={4}>
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image={flight}
+                  image={party}
                   title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Disney Land
+                    Quinceanera
                   </Typography>
-                  <Typography component="p">lorem</Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="secondary">
-                  Learn how to help
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card className={classes.card}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={flight}
-                  title="Disney Land Trip"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Disney Land
-                  </Typography>
-                  <Typography component="p">lorem</Typography>
+                  <Typography component="p">I want to have a quinceanera</Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
