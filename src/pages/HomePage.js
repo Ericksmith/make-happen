@@ -57,7 +57,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -82,7 +82,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -107,7 +107,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -132,7 +132,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -165,7 +165,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -190,7 +190,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -215,7 +215,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -240,7 +240,7 @@ class HomePage extends Component {
                 <CardMedia
                   className={classes.media}
                   image={flight}
-                  title="Contemplative Reptile"
+                  title="Disney Land Trip"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
